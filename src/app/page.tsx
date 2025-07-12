@@ -1,8 +1,10 @@
-import { Button } from "@/components/Button";
+import { Button } from "@/app/components/Button";
+import { Navbar } from "@/app/components/Navbar";
 
 export default function Home() {
   return (
     <>
+      <Navbar />
       <div className="flex flex-col w-screen h-screen justify-center items-center">
         <h1>Current component list - </h1>
         <div className="flex flex-col mt-2">
