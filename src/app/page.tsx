@@ -1,3 +1,4 @@
+'use client';
 import { Button } from "@/app/components/Button";
 import { Navbar } from "@/app/components/Navbar";
 
@@ -33,7 +34,7 @@ export default function Home() {
             />`}
           </code>
           <p>Example:</p>
-          <Button text='Get Started' variant="secondary" size="sm" animated={true} glow={true}/>
+          <Button text='Get Started' variant="secondary" size="sm" animated={true} glow={true} onClick={() => console.log(process.env.AUTH_GOOGLE_ID)}/>
         </div>
       </div>
     </>
