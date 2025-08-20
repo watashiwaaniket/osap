@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useSession } from "next-auth/react";
+import { CldImage, CldVideoPlayer } from "next-cloudinary";
 import { useEffect, useState } from "react";
 
 export default function DashboardCards() {
@@ -26,6 +27,7 @@ export default function DashboardCards() {
         }
     }, [session?.status, session]);
 
+    
     const filteredProjects = techFilter
         ? projects.filter((project) => project?.technologies.includes(techFilter))
         : projects;
@@ -41,10 +43,11 @@ export default function DashboardCards() {
         ) : filteredProjects.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {filteredProjects.map((project, index) => (
-              <div key={index} className="border p-2 h-80 w-48">
+              <div key={index} className="border p-2 h-80 w-60 overflow-auto">
                 <p className="font-bold">{project.name || 'Untitled Project'}</p>
                 <p>Tech: {project.technologies?.join(', ') || 'N/A'}</p>
                 <p>{project.desc || 'No description available'}</p>
+                <CldImage width="320" height="180" src="samples/animals/kitten-playing" alt="kitten"/>
               </div>
             ))}
           </div>
