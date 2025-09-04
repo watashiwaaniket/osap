@@ -1,8 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
+
 
 interface Project {
     id: number;
@@ -16,15 +18,27 @@ interface Project {
     user: string;
 }
 
-export default function Project({ params }: {
-    params: {
-        projectId: string;
-    }
-}) {
-    const router = useRouter();
+
+
+export default function Project() {
+    
     const [project, setProject] = useState<Project | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const router = useRouter();
+    const { data: session } = useSession();
+    const params = useParams() as { projectId: string };
+
+    async function deleteProject(id: number) {
+        const response = await fetch(`/api/projects/${id}`, {
+            method: 'DELETE'
+        });
+        if (response.ok) {
+            router.push('/dashboard');
+        } else {
+            return false;
+        }
+    }
 
     useEffect(() => {
         const fetchProject = async () => {
@@ -100,7 +114,7 @@ export default function Project({ params }: {
                                 {project.technologies.map((tech, index) => (
                                     <span 
                                         key={index}
-                                        className="px-3 py-1 bg-blue-600 text-neutral-100 rounded-full text-sm"
+                                        className="px-3 py-1 bg-neutral-100 text-neutral-950 rounded-full text-sm"
                                     >
                                         {tech}
                                     </span>
@@ -180,7 +194,7 @@ export default function Project({ params }: {
                                         href={project.livelink}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="block w-full bg-blue-600 hover:bg-blue-700 text-neutral-100 py-2 px-4 rounded-md text-center transition-colors"
+                                        className="block w-full bg-stone-300 hover:bg-stone-400 text-neutral-950 py-2 px-4 rounded-md text-center transition-colors"
                                     >
                                         Live Demo
                                     </a>
@@ -193,10 +207,12 @@ export default function Project({ params }: {
                             <h3 className="text-xl font-semibold text-neutral-100 mb-4">Actions</h3>
                             <div className="space-y-3">
                                 <button 
-                                    onClick={() => router.push(`/editproject/${project.id}`)}
-                                    className="w-full bg-neutral-100 hover:bg-neutral-200 text-neutral-950 py-2 px-4 rounded-md transition-colors"
+                                    onClick={() => deleteProject(project.id)}
+                                    disabled={session?.user?.email !== project.user}
+                                    aria-disabled={session?.user?.email !== project.user}
+                                    className={`w-full py-2 px-4 rounded-md transition-colors ${session?.user?.email === project.user ? 'bg-rose-400 hover:bg-rose-500 text-neutral-950' : 'bg-neutral-800 text-neutral-400 cursor-not-allowed border border-neutral-700'}`}
                                 >
-                                    Edit Project
+                                    Delete Project
                                 </button>
                                 <button 
                                     onClick={() => router.push('/addproject')}

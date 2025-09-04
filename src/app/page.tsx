@@ -207,6 +207,7 @@ export default function LandingPage() {
         >
           <motion.div
             className='text-center p-6 bg-gray-800/30 rounded-xl backdrop-blur-sm border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300'
+            //@ts-ignore
             variants={featureVariants}
             whileHover={{
               y: -10,
@@ -234,6 +235,7 @@ export default function LandingPage() {
 
           <motion.div
             className='text-center p-6 bg-gray-800/30 rounded-xl backdrop-blur-sm border border-gray-700/50 hover:border-green-500/50 transition-all duration-300'
+            //@ts-ignore
             variants={featureVariants}
             whileHover={{
               y: -10,
@@ -259,6 +261,7 @@ export default function LandingPage() {
 
           <motion.div
             className='text-center p-6 bg-gray-800/30 rounded-xl backdrop-blur-sm border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300'
+            //@ts-ignore
             variants={featureVariants}
             whileHover={{
               y: -10,
