@@ -1,6 +1,6 @@
 'use client';
 
-import { signOut, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 
@@ -31,7 +31,7 @@ export default function UserCard() {
     };
 
     return (
-        <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 my-4">
+        <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 my-4 sm:mx-6">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
                 {/* Left Section - Navigation and Title */}
                 <div className="flex-1">
@@ -51,8 +51,8 @@ export default function UserCard() {
                             <span>Go Back</span>
                         </button>
                     </div>
-                    <h1 className="text-3xl font-bold text-neutral-100">Project Dashboard</h1>
-                    <p className="text-neutral-400 mt-1">Your creative playground - build, explore, and showcase your projects</p>
+                    <h1 className="text-3xl font-bold text-neutral-100">Build. Learn. Contribute.</h1>
+                    <p className="text-neutral-400 mt-1">Explore amazing projects and showcase your own</p>
                 </div>
 
                 {/* Right Section - User Profile */}
@@ -69,7 +69,7 @@ export default function UserCard() {
                             <div className="relative">
                                 <button
                                     onClick={toggleDropdown}
-                                    className="relative group focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900 rounded-full"
+                                    className="relative group focus:outline-none focus:ring-2 focus:ring-neurtal-100 focus:ring-offset-2 focus:ring-offset-neutral-900 rounded-full"
                                 >
                                     <img 
                                         src={session.data.user.image || 'https://via.placeholder.com/64/374151/9CA3AF?text=U'} 
@@ -144,13 +144,20 @@ export default function UserCard() {
                             </div>
                         </div>
                     ) : (
-                        <div className="text-center">
-                            <div className="w-12 h-12 bg-neutral-700 rounded-full flex items-center justify-center mx-auto mb-2">
-                                <svg className="w-6 h-6 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                </svg>
+                        <div className="flex flex-col sm:flex-row items-center gap-4">
+                            {/* Welcome Message for Non-authenticated Users */}
+                            <div className="text-center sm:text-left">
+                                <p className="text-neutral-300 text-sm mb-2">Welcome! Browse projects freely</p>
+                                <p className="text-neutral-400 text-xs">Sign in to add your own projects</p>
                             </div>
-                            <p className="text-neutral-400 text-sm">Not signed in</p>
+                            
+                            {/* Sign In Button */}
+                            <button
+                                onClick={() => signIn()}
+                                className="px-4 py-2 bg-neutral-100 hover:bg-neutral-300 text-neutral-950 rounded-lg transition-colors font-medium text-sm"
+                            >
+                                Sign In
+                            </button>
                         </div>
                     )}
                 </div>

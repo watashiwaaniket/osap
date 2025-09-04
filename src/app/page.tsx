@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { ArrowRight, Github, Code, Users } from "lucide-react";
 import { motion } from "framer-motion";
+import { signIn } from "next-auth/react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -36,6 +37,7 @@ const featureVariants = {
 
 export default function LandingPage() {
   return (
+    
     <div className='min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-black overflow-hidden'>
       {/* Hero Section */}
       <motion.div
@@ -98,12 +100,12 @@ export default function LandingPage() {
           </motion.p>
 
           <motion.div
-            className='flex gap-4 justify-center'
+            className='flex gap-4 justify-center items-center'
             variants={itemVariants}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link
-                href='/login'
+              <button
+                onClick={() => signIn()}
                 className='bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-medium flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-blue-500/25'
               >
                 Get Started
@@ -117,13 +119,13 @@ export default function LandingPage() {
                 >
                   <ArrowRight className='w-5 h-5' />
                 </motion.div>
-              </Link>
+              </button>
             </motion.div>
 
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
-                href='/projects'
-                className='border border-gray-600 hover:border-gray-400 bg-gray-800/50 hover:bg-gray-700/50 text-gray-200 px-8 py-3 rounded-lg font-medium transition-all duration-300 backdrop-blur-sm'
+                href='/dashboard'
+                className='border border-gray-600 hover:border-gray-400 bg-gray-800/50 hover:bg-gray-700/50 text-gray-200 px-8 py-4 rounded-lg font-medium transition-all duration-300 backdrop-blur-sm'
               >
                 Browse Projects
               </Link>

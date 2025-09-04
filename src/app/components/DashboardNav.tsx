@@ -32,13 +32,13 @@ export default function DashboardNav({ onSearchChange, onTechFilterChange }: Das
     };
 
     return (
-        <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 my-4">
+        <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-6 my-4 sm:mx-6">
             <div className="flex flex-col lg:flex-row items-start lg:items-center w-full justify-between gap-4">
                 {/* Left Section - Title and Description */}
                 <div className="flex-1">
                     <h1 className="text-2xl font-bold text-neutral-100 mb-2">Project Dashboard</h1>
                     <p className="text-neutral-400 text-sm">
-                        Manage and explore your projects. Use the search and filters below to find specific projects.
+                        Manage and explore the projects. Use the search and filters below to find specific projects.
                     </p>
                 </div>
 
@@ -51,7 +51,7 @@ export default function DashboardNav({ onSearchChange, onTechFilterChange }: Das
                             placeholder="Search projects..."
                             value={searchQuery}
                             onChange={(e) => handleSearchChange(e.target.value)}
-                            className="w-full sm:w-64 px-4 py-2 pl-10 bg-neutral-800 border border-neutral-600 rounded-lg text-neutral-100 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full sm:w-64 px-4 py-2 pl-10 bg-neutral-800 border border-neutral-600 rounded-lg text-neutral-100 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-100 focus:border-transparent"
                         />
                         <svg 
                             className="absolute left-3 top-2.5 h-4 w-4 text-neutral-500" 
@@ -68,7 +68,7 @@ export default function DashboardNav({ onSearchChange, onTechFilterChange }: Das
                         <select
                             value={techFilter}
                             onChange={(e) => handleTechFilterChange(e.target.value)}
-                            className="w-full sm:w-48 px-4 py-2 bg-neutral-800 border border-neutral-600 rounded-lg text-neutral-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none cursor-pointer"
+                            className="w-full sm:w-48 px-4 py-2 bg-neutral-800 border border-neutral-600 rounded-lg text-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-100 focus:border-transparent appearance-none cursor-pointer"
                         >
                             <option value="">All Technologies</option>
                             <option value="react">React</option>
@@ -105,7 +105,7 @@ export default function DashboardNav({ onSearchChange, onTechFilterChange }: Das
                     {session.data?.user ? (
                         <Link 
                             href="/addproject" 
-                            className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-neutral-100 rounded-lg transition-colors font-medium text-center"
+                            className="px-6 py-2 bg-neutral-100 hover:bg-neutral-300 text-neutral-950 rounded-lg transition-colors font-medium text-center"
                         >
                             + Add Project
                         </Link>
