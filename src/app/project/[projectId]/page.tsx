@@ -18,6 +18,14 @@ interface Project {
     user: string;
 }
 
+// Utility function to convert GitHub blob URLs to raw URLs
+function convertToRawUrl(url: string): string {
+    if (url.includes('github.com') && url.includes('/blob/')) {
+        return url.replace('/blob/', '/raw/');
+    }
+    return url;
+}
+
 
 
 export default function Project() {
@@ -145,7 +153,7 @@ export default function Project() {
                                     {project.photos.map((photo, index) => (
                                         <div key={index} className="relative group">
                                             <img 
-                                                src={photo} 
+                                                src={convertToRawUrl(photo)} 
                                                 alt={`${project.name} - Image ${index + 1}`}
                                                 className="w-full h-48 object-cover rounded-lg transition-transform group-hover:scale-105"
                                                 onError={(e) => {
