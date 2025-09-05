@@ -17,8 +17,8 @@ export default function Dashboard() {
     };
     
     return(
-        <div className="w-screen h-screen flex justify-center">
-            <div className="w-full h-full p-8">
+        <div className="w-screen h-screen flex flex-col justify-center">
+            <div className="w-full h-full p-8 overflow-auto">
                 <UserCard />
                 <DashboardNav 
                     onSearchChange={handleSearchChange}
@@ -28,6 +28,7 @@ export default function Dashboard() {
                     searchQuery={searchQuery}
                     techFilter={techFilter}
                 />
+                
             </div>
         </div>
     )

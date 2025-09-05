@@ -6,11 +6,10 @@ const prisma = new PrismaClient();
 
 export async function GET(
     req: NextRequest,
-    res: NextResponse,
-    { params }: { params: { projectId: string } }
+    { params }: any
 ) {
     try {
-        const projectId = parseInt(params.projectId);
+        const projectId = parseInt((await params).projectId, 10);
         
         if (isNaN(projectId)) {
             return NextResponse.json(
@@ -44,8 +43,7 @@ export async function GET(
 
 export async function DELETE(
     req: NextRequest,
-    res: NextResponse,
-    { params }: { params: { projectId: string } }
+    { params }: any
 ) {
     try {
         const session = await auth();
@@ -53,7 +51,7 @@ export async function DELETE(
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
 
-        const projectId = parseInt(params.projectId);
+        const projectId = parseInt((await params).projectId, 10);
         if (isNaN(projectId)) {
             return NextResponse.json({ error: 'Invalid project ID' }, { status: 400 });
         }

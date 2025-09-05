@@ -91,18 +91,11 @@ export default function UserCard() {
 
                                 {/* Dropdown Menu */}
                                 {isDropdownOpen && (
-                                    <div className="absolute right-0 mt-2 w-64 bg-neutral-800 border border-neutral-600 rounded-lg shadow-xl z-50">
+                                    <div className="absolute sm:right-0 mt-2 w-64 bg-neutral-800 border border-neutral-600 rounded-lg shadow-xl z-50">
                                         <div className="p-4 border-b border-neutral-600">
-                                            <div className="flex items-center gap-3">
-                                                <img 
-                                                    src={session.data.user.image || 'https://via.placeholder.com/48/374151/9CA3AF?text=U'} 
-                                                    alt="Profile" 
-                                                    className="w-12 h-12 rounded-full"
-                                                />
-                                                <div>
+                                            <div className="flex flex-col overflow-auto">
                                                     <p className="text-neutral-100 font-medium">{session.data.user.name}</p>
-                                                    <p className="text-neutral-400 text-sm">{session.data.user.email}</p>
-                                                </div>
+                                                    <p className="text-neutral-400 text-sm overflow-auto">{session.data.user.email}</p>
                                             </div>
                                         </div>
                                         
