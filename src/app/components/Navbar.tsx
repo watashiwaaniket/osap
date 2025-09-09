@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <div className="mt-12">
     <motion.nav
-      className='flex items-center justify-between w-[600px] md:w-[700px] mx-auto px-4 py-2 
+      className='flex items-center justify-between w-90 md:w-[700px] mx-auto px-4 py-2 
                 rounded-full border border-gray-700
                  shadow-[0_4px_15px_rgba(0,0,0,0.5)] text-sm'
       initial={{ opacity: 0, y: -20 }}

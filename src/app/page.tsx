@@ -19,17 +19,17 @@ export default function Home() {
   // const y = useTransform(scrollYProgress, [0, 0.8], [50, 0]);
 
   return (
-    <div className="min-h-screen bg-cover bg-center bg-fixed">
+    <div className="max-h-screen bg-cover bg-center bg-fixed flex flex-col items-center overflow-hidden">
       <Navbar />
       <div className='text-white'>
           <motion.div
-            className='flex flex-col items-center px-4 pt-20 pb-10 text-center'
+            className='flex flex-col items-center px-4 mt-20 md:mt-20 pb-10 text-center'
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className='px-3 py-1.5 mb-4 rounded-full border border-gray-600
+              className='px-3 py-1.5 mb-8 rounded-full border border-gray-600
                        text-sm bg-black/60 backdrop-blur-md 
                        shadow-[0_0_15px_rgba(255,255,255,0.1)]'
               whileHover={{ scale: 1.05 }}
@@ -37,19 +37,19 @@ export default function Home() {
               Large Library of Organizations
             </motion.div>
 
-            <p className='text-base mb-3'>Your next contribution starts here</p>
+            <p className='text-xl -mb-3 font-semibold'>Your next contribution starts here</p>
 
-            <h1 className='text-4xl md:text-6xl font-extrabold mb-4 leading-snug'>
+            <h1 className='text-4xl md:text-6xl font-extrabold leading-snug'>
               Find. Contribute. Learn.
             </h1>
 
-            <p className='text-gray-400 max-w-md mx-auto mb-8 text-sm md:text-base'>
+            <p className='text-gray-400 max-w-md mx-auto mb-8 text-xl md:text-base'>
               Finding contribution for your organization just got easier
             </p>
 
             <Link href={'/dashboard'}>
             <motion.button
-              className='px-6 py-2.5 rounded-full font-medium
+              className='px-6 py-1.5 mt-8 rounded-full font-medium
                        bg-gradient-to-r from-gray-800 via-gray-900 to-black
                        border border-gray-600 shadow-md relative overflow-visible text-sm md:text-base'
               whileHover={{ scale: 1.05 }}
@@ -76,6 +76,11 @@ export default function Home() {
             <Dashboard />
           </motion.div>
         </div> */}
+        <div className="w-90 md:w-[860px] max-h-screen border border-neutral-600 rounded-4xl backdrop-blur-lg">
+            <div>
+              <video src="/hero-video.mp4" className="rounded-4xl p-3" autoPlay={true} loop={true}></video>
+            </div>
+        </div>
       </div>
     </div>
   );
