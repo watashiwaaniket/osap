@@ -6,17 +6,22 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
+    <div className="mt-12">
     <motion.nav
-      className='flex items-center justify-between w-[600px] md:w-[700px] mx-auto mt-6 px-4 py-2 
-                 bg-black/80 backdrop-blur-sm rounded-full border border-gray-700
+      className='flex items-center justify-between w-[600px] md:w-[700px] mx-auto px-4 py-2 
+                rounded-full border border-gray-700
                  shadow-[0_4px_15px_rgba(0,0,0,0.5)] text-sm'
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
+      style={{
+        "backgroundColor" : "rgba(0,0,0,0.5)",
+        "backdropFilter" : "blur(1px)"
+      }}
     >
       <div className='flex items-center space-x-2'>
         <Image
-          src='/logo_latest.png'
+          src='/my_icon.png'
           alt='Logo'
           width={32}
           height={32}
@@ -55,5 +60,6 @@ export default function Navbar() {
         </motion.button>
       </Link>
     </motion.nav>
+    </div>
   );
 }

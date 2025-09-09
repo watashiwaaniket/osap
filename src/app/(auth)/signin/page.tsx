@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -10,6 +9,7 @@ export default function Signin() {
   const handleSignIn = async (provider: "google") => {
     await signIn(provider, { callbackUrl: "/dashboard" });
   };
+  const router = useRouter()
 
   return (
     <div className="bg-[url('/bg.png')] min-h-screen bg-cover bg-center ">
@@ -74,7 +74,7 @@ export default function Signin() {
 
             <div className='flex items-center gap-4 mt-3'>
               <button
-                onClick={() => router.push("/home")} //put the home page path here
+                onClick={() => router.push("/")} //put the home page path here
                 className='flex items-center gap-2 text-neutral-400 hover:text-neutral-200 transition-colors group'
               >
                 <svg

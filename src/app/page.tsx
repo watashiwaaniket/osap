@@ -5,6 +5,7 @@ import { useRef } from "react";
 import Head from "next/head";
 // import Dashboard from "./dashboard/page";
 import Navbar from "./components/Navbar";
+import Link from "next/link";
 
 export default function Home() {
   // const dashboardRef = useRef(null);
@@ -18,15 +19,9 @@ export default function Home() {
   // const y = useTransform(scrollYProgress, [0, 0.8], [50, 0]);
 
   return (
-    <>
-      <Head>
-        <title>OSAP - Find. Contribute. Learn.</title>
-        <meta name='description' content='Your next contribution starts here' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-      <div className="bg-[url('/bg.png')] min-h-screen bg-cover bg-center">
-        <Navbar />
-        <div className=' text-white'>
+    <div className="min-h-screen bg-cover bg-center bg-fixed">
+      <Navbar />
+      <div className='text-white'>
           <motion.div
             className='flex flex-col items-center px-4 pt-20 pb-10 text-center'
             initial={{ opacity: 0, y: 30 }}
@@ -52,6 +47,7 @@ export default function Home() {
               Finding contribution for your organization just got easier
             </p>
 
+            <Link href={'/dashboard'}>
             <motion.button
               className='px-6 py-2.5 rounded-full font-medium
                        bg-gradient-to-r from-gray-800 via-gray-900 to-black
@@ -62,6 +58,7 @@ export default function Home() {
               <span className='relative z-10'>Get Started</span>
               <span className='absolute inset-0 bg-gradient-to-r from-white/20 via-white/40 to-white/20 opacity-0 hover:opacity-100 transition-opacity duration-700 rounded-full blur-sm'></span>
             </motion.button>
+            </Link>
           </motion.div>
 
           {/* <div
@@ -79,8 +76,7 @@ export default function Home() {
             <Dashboard />
           </motion.div>
         </div> */}
-        </div>
       </div>
-    </>
+    </div>
   );
 }
