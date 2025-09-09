@@ -19,7 +19,7 @@ export default function Home() {
   // const y = useTransform(scrollYProgress, [0, 0.8], [50, 0]);
 
   return (
-    <div className="max-h-screen bg-cover bg-center bg-fixed flex flex-col items-center overflow-hidden">
+    <div className="max-h-screen bg-cover bg-center bg-fixed flex flex-col items-center sm:overflow-hidden">
       <Navbar />
       <div className='text-white'>
           <motion.div
@@ -59,6 +59,15 @@ export default function Home() {
               <span className='absolute inset-0 bg-gradient-to-r from-white/20 via-white/40 to-white/20 opacity-0 hover:opacity-100 transition-opacity duration-700 rounded-full blur-sm'></span>
             </motion.button>
             </Link>
+
+            <div 
+              className="w-90 md:w-[860px] max-h-screen border border-neutral-600 rounded-4xl backdrop-blur-lg mt-20 pb-2"
+            >
+                <div>
+                  {/* <video src="/hero-video.mp4" className="rounded-4xl p-3" autoPlay={true} loop={true}></video> */}
+                  <img src="/hero-ss.png" className="rounded-4xl p-4" alt="hero-dashboard" />
+                </div>
+            </div>
           </motion.div>
 
           {/* <div
@@ -76,17 +85,7 @@ export default function Home() {
             <Dashboard />
           </motion.div>
         </div> */}
-        <motion.div 
-          className="w-90 md:w-[860px] max-h-screen border border-neutral-600 rounded-4xl backdrop-blur-lg"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-            <div>
-              {/* <video src="/hero-video.mp4" className="rounded-4xl p-3" autoPlay={true} loop={true}></video> */}
-              <img src="/hero-ss.png" className="rounded-4xl p-4" alt="hero-dashboard" />
-            </div>
-        </motion.div>
+        
       </div>
     </div>
   );
