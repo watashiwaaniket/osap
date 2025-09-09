@@ -17,7 +17,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className='w-screen h-screen flex flex-col justify-center'>
+    <div className='w-screen h-screen flex flex-col justify-center bg-neutral-950'>
       <div className='w-full h-full p-8 overflow-auto'>
         <UserCard />
         <DashboardNav

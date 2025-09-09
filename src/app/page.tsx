@@ -76,11 +76,17 @@ export default function Home() {
             <Dashboard />
           </motion.div>
         </div> */}
-        <div className="w-90 md:w-[860px] max-h-screen border border-neutral-600 rounded-4xl backdrop-blur-lg">
+        <motion.div 
+          className="w-90 md:w-[860px] max-h-screen border border-neutral-600 rounded-4xl backdrop-blur-lg"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
             <div>
-              <video src="/hero-video.mp4" className="rounded-4xl p-3" autoPlay={true} loop={true}></video>
+              {/* <video src="/hero-video.mp4" className="rounded-4xl p-3" autoPlay={true} loop={true}></video> */}
+              <img src="/hero-ss.png" className="rounded-4xl p-4" alt="hero-dashboard" />
             </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
