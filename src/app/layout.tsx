@@ -15,7 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "osap - open source application platform",
-  description: "Open Source Application Platform - A place where anyone can find contributor for their project or their next meaningful contribution.",
+  description:
+    "Open Source Application Platform - A place where anyone can find contributor for their project or their next meaningful contribution.",
   icons: {
     icon: "/osapicon.png",
   },
@@ -27,13 +28,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Providers>
-        {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
