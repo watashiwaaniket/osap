@@ -14,19 +14,17 @@ export default function Navbar() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      {/* Logo */}
       <div className='flex items-center space-x-2'>
         <Image
           src='/logo_latest.png'
           alt='Logo'
-          width={32} // adjust size if needed
+          width={32}
           height={32}
           className='rounded-full'
-          priority // ensures logo loads fast
+          priority
         />
       </div>
 
-      {/* Nav Links */}
       <div className='flex items-center space-x-6'>
         <a href='#' className='hover:text-gray-300 transition-colors'>
           About
@@ -39,8 +37,7 @@ export default function Navbar() {
         </a>
       </div>
 
-      {/* Login Button */}
-      <Link href='/sign-in'>
+      <Link href='/signin'>
         <motion.button
           className='px-4 py-1.5 rounded-full font-medium text-sm
                      bg-gradient-to-r from-gray-800 via-gray-900 to-black
