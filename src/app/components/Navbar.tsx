@@ -33,7 +33,7 @@ export default function Navbar() {
       </div>
 
       {/* Login Button */}
-      <Link href='/sign-in'>
+      <Link href='/signin'>
         <motion.button
           className='px-4 py-1.5 rounded-full font-medium text-sm
                    bg-gradient-to-r from-gray-800 via-gray-900 to-black

@@ -26,7 +26,8 @@ export default function Home() {
       </Head>
 
       <Navbar />
-      <div className="min-h-screen bg-[url('/bg.png')] bg-cover bg-center text-white">
+      <div className="min-h-screen bg-cover bg-center text-white"
+        style={{'backgroundImage' : 'url(/bg.png)', 'position' : 'absolute'}}>
         <motion.div
           className='flex flex-col items-center px-4 pt-20 pb-10 text-center'
           initial={{ opacity: 0, y: 30 }}
@@ -34,7 +35,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            className='px-3 py-1.5 mb-4 rounded-full border border-gray-600
+            className='px-3 py-1.5 my-6 rounded-full border border-gray-600
                        text-sm bg-black/60 backdrop-blur-md 
                        shadow-[0_0_15px_rgba(255,255,255,0.1)]'
             whileHover={{ scale: 1.05 }}
@@ -42,15 +43,15 @@ export default function Home() {
             Large Library of Organizations
           </motion.div>
 
-          <p className='text-gray-400 text-base mb-3'>
+          <p className='text-gray-200 text-2xl font-bold my-2 mt-8'>
             Your next contribution starts here
           </p>
 
-          <h1 className='text-4xl md:text-5xl font-extrabold mb-4 leading-snug'>
+          <h1 className='text-4xl md:text-7xl font-extrabold mb-4 leading-snug'>
             Find. Contribute. Learn.
           </h1>
 
-          <p className='text-gray-400 max-w-md mx-auto mb-8 text-sm md:text-base'>
+          <p className='text-gray-400 max-w-md mx-auto mb-8 text-xl md:text-base'>
             Finding contribution for your organization just got easier
           </p>
 
