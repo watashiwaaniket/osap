@@ -31,15 +31,15 @@ export default function Navbar() {
       </div>
 
       <div className='flex items-center space-x-6'>
-        <a href='#' className='hover:text-gray-300 transition-colors'>
-          About
-        </a>
-        <a href='#' className='hover:text-gray-300 transition-colors'>
+        <Link href='/' className='hover:text-gray-300 transition-colors'>
+          Blog
+        </Link>
+        <Link href='/dashboard' className='hover:text-gray-300 transition-colors'>
           Organizations
-        </a>
-        <a href='#' className='hover:text-gray-300 transition-colors'>
+        </Link>
+        <Link href='https://github.com/watashiwaaniket/osap' className='hover:text-gray-300 transition-colors'>
           Github
-        </a>
+        </Link>
       </div>
 
       <Link href='/signin'>

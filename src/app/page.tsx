@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div className="max-h-screen bg-cover bg-center bg-fixed flex flex-col items-center overflow-hidden">
       <Navbar />
-      <div className='text-white'>
+      <div className='text-white flex flex-col items-center'>
           <motion.div
             className='flex flex-col items-center px-4 mt-20 md:mt-20 pb-10 text-center'
             initial={{ opacity: 0, y: 30 }}

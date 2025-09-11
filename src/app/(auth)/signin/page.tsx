@@ -96,16 +96,8 @@ export default function Signin() {
           </motion.div>
         </div>
 
-        <div className='hidden md:flex relative items-center justify-center bg-gradient-to-br from-indigo-600/60 via-purple-600/60 to-blue-600/60'>
-          <div className='absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_40%),radial-gradient(circle_at_80%_0,rgba(255,255,255,0.06),transparent_40%),radial-gradient(circle_at_50%_80%,rgba(255,255,255,0.05),transparent_40%)]' />
-          <motion.div
-            className='relative w-4/5 max-w-lg bg-white/5 border border-white/10 rounded-xl p-8 backdrop-blur-md'
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            go nuts put smth here
-          </motion.div>
+        <div className='hidden md:flex relative items-center justify-center bg-gradient-to-br from-indigo-600/60 via-purple-600/60 to-blue-600/60 h-screen overflow-hidden'>
+          <img src="/auth-card.jpg" alt="cover"/>
         </div>
       </div>
     </div>
