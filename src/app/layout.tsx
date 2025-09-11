@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "Open Source Application Platform - A place where anyone can find contributor for their project or their next meaningful contribution.",
   icons: {
-    icon: "/osapicon.png",
+    icon: "/osapfavicon.png",
   },
 };
 
