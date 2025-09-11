@@ -96,7 +96,7 @@ export default function Signin() {
           </motion.div>
         </div>
 
-        <div className='hidden md:flex relative items-center justify-center bg-gradient-to-br from-indigo-600/60 via-purple-600/60 to-blue-600/60 h-screen overflow-hidden'>
+        <div className='hidden md:flex relative items-center justify-center bg-amber-100 h-screen overflow-hidden'>
           <img src="/auth-card.jpg" alt="cover"/>
         </div>
       </div>
